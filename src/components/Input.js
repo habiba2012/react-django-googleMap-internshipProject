@@ -8,7 +8,7 @@ const Input = ({ placeholder, error, ...props }) => {
 
   const ref = useRef();
 
-  const handleChnage = () => {
+  const handleInput = () => {
     if (ref.current.value !== "") {
       setFocus(true);
     } else {
@@ -20,15 +20,16 @@ const Input = ({ placeholder, error, ...props }) => {
     <Container error={error}>
       {error && (
         <ErrorMessage>
-          <ErrorSVG size="16px" />
+          {/* <ErrorSVG size="16px" /> */}
           {error}
         </ErrorMessage>
       )}
       <StyledInput
-        onChange={() => handleChnage()}
+        onChange={() => handleInput()}
         placeholder={placeholder}
         focus={focus}
         ref={ref}
+
         {...props}
       />
     </Container>
@@ -38,6 +39,7 @@ const Input = ({ placeholder, error, ...props }) => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  
   margin-top: ${(props) => (props.error ? "6px" : "24px")};
 `;
 const ErrorMessage = styled.div`
@@ -52,15 +54,17 @@ const ErrorMessage = styled.div`
 `;
 const StyledInput = styled.input`
   background: ${(props) => (props.focus ? "#fff" : COLOR.BLUE)};
+  font-family: aktiv-grotesk-condensed, sans-serif;
+   font-weight: 200;
+  font-style: normal;
   font-size: 20px;
   border-radius: 25px;
   color: #fff;
   border: 2px solid;
   border-color: ${(props) => (props.focus ? "#fff" : COLOR.BLUE)};
   width: 250px;
-  font-weight: 300;
   outline: none;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
 
   ::placeholder {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import CloseSVG from "./icons/CloseSVG";
+// import AddSVG from "../icons/AddSVG";
 import Form from "./Form";
 
 const Add = () => {
@@ -8,16 +9,16 @@ const Add = () => {
 
   return (
     <>
-      {open && (
-        <BackDrop>
-          <Close onClick={() => setOpen(!open)}>
-            <CloseSVG />
-          </Close>
-          <Form />
-        </BackDrop>
-      )}
+      {/* {open && ( */}
+      <BackDrop>
+        <Close onClick={() => setOpen(!open)}>
+          <CloseSVG />
+        </Close>
+        <Form />
+      </BackDrop>
+      {/* )} */}
 
-      <Button onClick={() => setOpen(!open)}>Add</Button>
+      {/* <Button onClick={() => setOpen(!open)}>+</Button> */}
     </>
   );
 };
@@ -32,14 +33,15 @@ const Button = styled.button`
   border-radius: 30px;
   background-color: #152afc;
   color: white;
+  font-weight: bold;
   transition: 200ms;
   text-decoration: none;
   position: absolute;
   bottom: 26px;
   right: 26px;
-  z-index: 11;
+  /* z-index: 11; */
   border: none;
-  font-size: 16px;
+  font-size: 25px;
   outline: none;
 
   :hover {
@@ -56,6 +58,7 @@ const BackDrop = styled.div`
   z-index: 12;
   display: flex;
   flex-direction: column;
+  
 `;
 const Close = styled.button`
   margin: 5px;

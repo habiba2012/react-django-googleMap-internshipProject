@@ -75,6 +75,11 @@ export const MAP_STYLE = [
     stylers: [{ color: "#ccc1ba" }],
   },
   {
+    featureType: "road",
+    elementType: "labels.icon",
+    stylers: [{ visibility: "off" }],
+  },
+  {
     featureType: "road.highway",
     elementType: "geometry.stroke",
     stylers: [{ color: "#eaeafe" }],
@@ -151,6 +156,6 @@ export const MAP_STYLE = [
   },
 ];
 
-export const BASE_URL = "http://localhost:8000";
+export const BASE_URL = "http://127.0.0.1:8000";//https://localhost:8000
 
 export const COLOR = { BLUE: "#152AFC", PURPLE: "#DADBFE", RED: "#E53333" };

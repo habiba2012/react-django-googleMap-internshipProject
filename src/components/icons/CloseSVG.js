@@ -3,12 +3,12 @@ import React from "react";
 const CloseSVG = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="46"
-    height="46"
+    width="43"
+    height="43"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
+    stroke="white"
+    strokeWidth=""
     strokeLinecap="round"
     strokeLinejoin="round"
   >

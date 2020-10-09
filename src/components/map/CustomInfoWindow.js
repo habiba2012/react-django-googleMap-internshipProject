@@ -6,11 +6,13 @@ import ArrowRightSVG from "../icons/ArrowRightSVG";
 import ArrowLeftSVG from "../icons/ArrowLeftSVG";
 import ClockSVG from "../icons/ClockSVG";
 import GlobeSVG from "../icons/GlobeSVG";
+import CloseSVG from "../icons/CloseSVG";
+
 import NavigationSVG from "../icons/NavigationSVG";
 
 export default function CustomInfoWindow({ shop }) {
   return (
-    <Container color={shop.marker_img[1]}>
+    <Container color={shop.marker[1]}>
       <Name>{shop.name}</Name>
       <Description>{shop.description}</Description>
       <CarouselWrapper>
@@ -28,7 +30,7 @@ export default function CustomInfoWindow({ shop }) {
           style={{ outline: "none" }}
           defaultControlsConfig={{
             pagingDotsStyle: {
-              fill: "#fff",
+              fill: "var(--lavender)",
             },
             svgStyle: { width: "8px" },
           }}
@@ -48,11 +50,11 @@ export default function CustomInfoWindow({ shop }) {
       </Wrapper>
       <Wrapper>
         <GlobeSVG />
-        <StyledText>{shop.shop_domain}</StyledText>
+        <StyledText>{shop.website}</StyledText>
       </Wrapper>
       <Wrapper>
         <NavigationSVG />
-        <StyledText>{shop.adress}</StyledText>
+        <StyledText>{shop.street}</StyledText>
       </Wrapper>
       <Categories>{shop.categories}</Categories>
     </Container>
@@ -80,7 +82,7 @@ const Container = styled.div`
     transform: translate(-50%, -50%) rotate(-45deg);
     width: 15px;
     background: ${(props) =>
-      props.color === "vintage" ? COLOR.PURPLE : COLOR.BLUE};
+    props.color === "vintage" ? COLOR.PURPLE : COLOR.BLUE};
   }
 `;
 const CarouselWrapper = styled.div`
@@ -94,11 +96,13 @@ const Button = styled.div`
 const Name = styled.h3`
   max-width: 200px;
   font-size: 32px;
+  font-weight: bold;
   margin: 0 25px;
   text-transform: uppercase;
 `;
 const Description = styled.h4`
   text-transform: uppercase;
+  font-weight: bold!important;
   margin: 6px 25px 20px 25px;
   font-size: 12px;
 `;
@@ -106,6 +110,7 @@ const Thumbnail = styled.div`
   width: 100%;
   max-width: 250px;
   height: 150px;
+  font-weight: bold;
   background-position-y: bottom;
   background: url(${(props) => BASE_URL + props.image});
   background-size: cover;
@@ -121,9 +126,12 @@ const StyledText = styled.span`
   font-size: 14px;
   margin: 0 0 0 10px;
   max-width: 150px;
+  text-transform:none;
+
 `;
 const Hours = styled.p`
   margin: 0;
+  text-transform:none;
 `;
 const Categories = styled.p`
   text-align: center;

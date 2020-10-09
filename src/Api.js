@@ -7,16 +7,15 @@ class Api {
     if (response.status >= 400) throw Error(data.message);
     return data;
   }
-
-  static async addStore(name, adress, shopDomain, oppeningHours, categories) {
+  // name,adress,shopDomain,oppeningHours,categories,
+  static async addStore(name, website, marker, street) {
     const response = await fetch(`${BASE_URL}/api/add_store`, {
       method: "POST",
       body: JSON.stringify({
         name,
-        adress,
-        shopDomain,
-        oppeningHours,
-        categories,
+        website,
+        marker,
+        street,
       }),
       headers: { "Content-Type": "application/json" },
     });

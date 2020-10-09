@@ -9,24 +9,34 @@ const CategoryOptions = () => {
   const [options, setOptions] = useState([]);
   const ref = useRef();
 
-  const handleOptions = () => {
-    const option = ref.current.innerHTML;
-    if (!options.includes(option)) {
-      setOptions((oldArray) => [...oldArray, option]);
-      setChecked(true);
-    } else {
-      setOptions(options.filter((category) => category !== option));
-      setChecked(false);
-    }
+  const [isChecked, setIsChecked] = useState(false);
+
+
+  const handleOptions = (e) => {
+    setIsChecked(!isChecked);
   };
 
   return (
     <Container open={open}>
-      <Wrapper onClick={() => setOpen(!open)}>+ categories</Wrapper>
+      <Wrapper onClick={() => setOpen(!open)}>categories</Wrapper>
       <OptionsWrapper>
         <CheckboxWrapper onClick={() => handleOptions()}>
-          <Checkbox checked={checked}>{checked && <CheckSVG />}</Checkbox>
-          <Label ref={ref}>women</Label>
+          <Checkbox >{isChecked && <CheckSVG />}</Checkbox>
+          <Label ref={ref}>MEN</Label>
+        </CheckboxWrapper>
+        <CheckboxWrapper onClick={() => handleOptions()}>
+          <Checkbox checked={!isChecked}>{isChecked && <CheckSVG />}</Checkbox>
+          <Label ref={ref}>WOMEN</Label>
+        </CheckboxWrapper>
+        <CheckboxWrapper onClick={() => handleOptions()}>
+          <Checkbox checked={!isChecked}>{isChecked && <CheckSVG />}</Checkbox>
+
+          <Label ref={ref}>CHILDREN</Label>
+        </CheckboxWrapper>
+        <CheckboxWrapper onClick={() => handleOptions()}>
+          <Checkbox checked={!isChecked}>{isChecked && <CheckSVG />}</Checkbox>
+
+          <Label ref={ref}>CONCEPT STORE</Label>
         </CheckboxWrapper>
       </OptionsWrapper>
     </Container>
@@ -37,14 +47,17 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: ${(props) => (props.open ? "100px" : "54px;")};
+  height: ${(props) => (props.open ? "58px" : "100px;")};
   transition: 200ms;
 `;
 const Wrapper = styled.div`
   background: ${(props) => (props.option ? "#fff" : COLOR.BLUE)};
   font-size: 20px;
+  /* margin: 3px 5px 0px -3px; */
+  margin: auto;
+  margin-top: 12px;
+  margin-bottom:-2px;
   border-radius: 25px;
-  margin: 8px;
   color: ${(props) => (props.option ? COLOR.BLUE : "#fff")};
   border: 2px solid;
   border-color: ${(props) => (props.option ? "#fff" : COLOR.BLUE)};
@@ -52,13 +65,11 @@ const Wrapper = styled.div`
   font-weight: 300;
   padding: 10px;
   text-align: center;
-  cursor: pointer;
 `;
 const OptionsWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 16px;
-`;
+ margin: auto;`;
 const CheckboxWrapper = styled.div`
   display: flex;
   align-items: center;

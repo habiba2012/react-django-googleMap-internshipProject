@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { GoogleMap, Marker, InfoWindow } from "react-google-maps";
 import CustomInfoWindow from "./CustomInfoWindow";
 import Api from "../../Api";
+
 import { BASE_URL, MAP_STYLE } from "../../constants";
 
 const MapComponent = () => {
@@ -51,7 +52,9 @@ const MapComponent = () => {
         >
           <CustomInfoWindow shop={selectedShop} />
         </InfoWindow>
+
       )}
+
     </GoogleMap>
   );
 };

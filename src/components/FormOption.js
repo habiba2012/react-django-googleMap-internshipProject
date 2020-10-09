@@ -4,7 +4,7 @@ import { COLOR } from "../constants";
 
 const FormOption = () => {
   const [open, setOpen] = useState(false);
-  const [optionValue, setOptionValue] = useState("new / correction*");
+  const [optionValue, setOptionValue] = useState("name of the store*");
   const [chosen, setChosen] = useState(false);
   const ref = useRef();
 
@@ -20,15 +20,15 @@ const FormOption = () => {
       <Option onClick={() => setOpen(!open)} option={chosen}>
         {optionValue}
       </Option>
-      <Option ref={ref} option onClick={cahngeOption}>
+      {/*  <Option ref={ref} option onClick={cahngeOption}>
         I'm adding new store
-      </Option>
-      <Option ref={ref} option onClick={cahngeOption}>
+      </Option> */}
+      {/*  <Option ref={ref} option onClick={cahngeOption}>
         I'm correcting information
       </Option>
       <Disclamer>
         Have we made a mistake? Let us know and we'll make it right!
-      </Disclamer>
+      </Disclamer> */}
     </Container>
   );
 };
@@ -49,7 +49,8 @@ const Option = styled.div`
   color: ${(props) => (props.option ? COLOR.BLUE : "#fff")};
   border: 2px solid;
   border-color: ${(props) => (props.option ? "#fff" : COLOR.BLUE)};
-  width: 250px;
+  width: 220px;
+  height: 20px;
   font-weight: 300;
   padding: 10px;
   text-align: center;
