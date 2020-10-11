@@ -17,7 +17,7 @@ function Community() {
                  We literally want to include your friends & network too.</p>
 
             <br />
-            <p style={{ fontStyle: "italic", fontFamily: "'Adobe Clean', sans-serif", fontWeight: "20px!important" }}>HOW TO ACTIVELY JOIN CONSCIOUS SWEATER COMMUNITY:</p>
+            <p style={{ fontStyle: "italic" }}>HOW TO ACTIVELY JOIN CONSCIOUS SWEATER COMMUNITY:</p>
             <div className="bullent-points">
                 <ul className="community-details">
                     <li><span style={{ marginTop: "-10px!important" }}>Tell your friends about us here (CS Fb sharable link)</span></li>
@@ -33,7 +33,8 @@ function Community() {
             <br />
             {/* <img src={LinesPurple} alt="" width="300px" /> */}
 
-
+            <br />
+            <br />
         </ContainerCommunity>
     )
 }

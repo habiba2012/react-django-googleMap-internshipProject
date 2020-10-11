@@ -64,9 +64,9 @@ const About = () => {
                     </Header>
                     <AboutPage >
 
-                        <h1 style={{ textAlign: "center!important", marginTop: "150px!important" }}>About</h1>
+                        <h1 style={{ textAlign: "center!important", marginTop: '60px', marginLeft: '560px ' }}>About</h1>
                         <br />
-                        <p style={{ marginTop: "10px" }}>Conscious Sweater is your easy way to buy <span style={{ fontWeight: 'bold' }}>sustainable fashion</span>. We don’t want you to shop more! When you need to shop, however, we help you to do it consciously. </p>
+                        <p style={{ marginTop: "100px" }}>Conscious Sweater is your easy way to buy <span style={{ fontWeight: 'bold' }}>sustainable fashion</span>. We don’t want you to shop more! When you need to shop, however, we help you to do it consciously. </p>
                         <br />
                         <p style={{ fontStyle: "italic" }}> ‘We created a
                         map helping you to find places that offer consciously made clothes.’</p>
@@ -88,23 +88,18 @@ const About = () => {
                         <p style={{ fontStyle: "italic" }}>‘We at Conscious Sweater want a world where sustainable fashion is the new norm.’</p>
                         <br />
                         <p>We want to make sustainable and fair fashion more accessible to you as well as to enable global change in fashion consumption</p>
+                        <br />
+                        <br />
                     </AboutPage  >
-                    <br />
-                    <br />
-                    <br />
-                    <br /><br />
+
+
                     <Team />
-                    <br />
-                    <br />
-                    <br /> <br /><br />
+
+
                     <Sustainability />
-                    <br />
-                    <br />
-                    <br /> <br /><br />
+
                     <Community />
-                    <br />
-                    <br />
-                    <br /> <br /><br />
+
                     <Contact />
                 </ContainerAbout>
 
@@ -182,14 +177,12 @@ const AboutPage = styled.div`
     h1 {
     font-weight: bold;
     text-transform: uppercase;
-    position:relative;
+    /* position:relative; */
     text-align: center!important;
     font-size: 30px;
     color: var(--lavender);
-    /* margin-top: 60px; */
-    /* margin-left: 560px; */
-    top:50%;
-    transform: translate(-50% , -50%);
+    
+    /* transform: translate(-50% , -50%); */
     @media only screen and (max-width: 768px){
     
     font-size: 25px;

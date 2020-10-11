@@ -4,6 +4,7 @@ import styled from "styled-components";
 function Team() {
     return (
         <ContainerTeam>
+            <br /><br />
             <h1>Team</h1>
             <br />
             <h2 style={{ marginTop: "10px", textAlign: "center", fontStyle: "italic", fontWeight: "10px!important", color: "blue" }}>WHO KNITS THE CONSCIOUS SWEATER?</h2>
@@ -27,6 +28,7 @@ function Team() {
                  the map that you can see and explore it now. She studied Web development and enjoys coding as anything else. </p>
             <br />
             <p>Finn helps us structure the coding & advises us on the web development process.</p>
+            <br /><br />
         </ContainerTeam>
     )
 }
