@@ -58,7 +58,7 @@ export default function Map() {
     };
 
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: "AIzaSyB5S8ostoO0xtwOupbjZSj8aHtVo7LkghM",
+        googleMapsApiKey: "",
         libraries,
     });
     const [markers, setMarkers] = React.useState([]);
